@@ -1,0 +1,8 @@
+# this is used for $_SERVER["HTTP_AUTHORIZATION"]
+CGIPassAuth On
+# url re-write
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !post.php
+RewriteCond %{REQUEST_URI} !index.php
+RewriteCond %{REQUEST_URI} !testing.php
+RewriteRule (.*) index.php?id=$1
